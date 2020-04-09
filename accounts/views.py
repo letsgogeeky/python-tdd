@@ -28,8 +28,6 @@ def login(request):
     print('login view', file=sys.stderr)
     uid = request.GET.get('uid')
     user = authenticate(request=request, uid=uid)
-    print(Token.objects.all())
-    print(user)
     if user is not None:
         auth_login(request, user)
     return redirect('/')
