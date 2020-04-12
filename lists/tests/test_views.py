@@ -66,7 +66,6 @@ class ListViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home.html')
         expected_error = escape("You can't have an empty list item")
-        print(response.content.decode())
         self.assertContains(response, expected_error)
 
     def test_for_invalid_input_nothing_saved_to_db(self):
